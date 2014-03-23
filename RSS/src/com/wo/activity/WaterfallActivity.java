@@ -53,6 +53,8 @@ public class WaterfallActivity extends Activity implements
 		item_width = getWindowManager().getDefaultDisplay().getWidth() / column;
 		linearLayouts = new ArrayList<LinearLayout>();
 		utils = new BitmapUtils(this);
+		waterfallMa = new WaterfallActivityManager();
+		ws = new WaterfallService();
 		// 添加三列到waterfall_container
 		for (int i = 0; i < column; i++) {
 			LinearLayout layout = new LinearLayout(this);
@@ -64,8 +66,6 @@ public class WaterfallActivity extends Activity implements
 			linearLayouts.add(layout);
 			waterfall_container.addView(layout, i);
 		}
-		waterfallMa = new WaterfallActivityManager();
-		ws = new WaterfallService();
 		waterfallMa.getWaterfallImgList(this, current_page);
 	}
 
