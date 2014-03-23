@@ -16,7 +16,7 @@ import com.wo.service.XMLParser;
  * @version 创建时间：17 Mar 2014 21:31:13 类说明 给Main Activity UI提供数据
  */
 
-public class MainActivityManager {
+public class RSSActivityManager {
 	public List<Brief> getData() throws SAXException, IOException,
 			ParserConfigurationException {
 		XMLParser xml = new XMLParser();

@@ -21,22 +21,22 @@ import android.widget.ListView;
 import com.wo.base.CustomScrollListener;
 import com.wo.base.ImgAndTxtArrayAdapter;
 import com.wo.base.UpdateDataHandler;
-import com.wo.data.manager.MainActivityManager;
+import com.wo.data.manager.RSSActivityManager;
 import com.wo.models.Brief;
 import com.wo.rss.R;
 
 /**
  * @author 作者 mengyangwang E-mail:wangmengyang101@gmail.com
  * @version 创建时间：17 Mar 2014 12:00:38
- * @类说明 MainActivity用于显示主页上的rss简要（每一条是一个listview 由图片和text构成）
+ * @类说明 ListActivity用于显示主页上的rss简要（每一条是一个listview 由图片和text构成）
  */
 
-public class MainActivity extends Activity {
+public class RSSActivity extends Activity  {
 	ListView list = null;
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
-		setContentView(R.layout.main_activity);
+		setContentView(R.layout.list_activity);
 		list = (ListView) findViewById(R.id.listView);
 		super.onCreate(savedInstanceState);
 		init();
@@ -50,7 +50,7 @@ public class MainActivity extends Activity {
 		new Thread() {
 			@Override
 			public void run() {
-				MainActivityManager manager = new MainActivityManager();
+				RSSActivityManager manager = new RSSActivityManager();
 				Message message = null;
 				try {
 					message = handler.obtainMessage(0, manager.getData());

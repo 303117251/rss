@@ -1,6 +1,5 @@
 package com.wo.activity;
 
-import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.content.Intent;
 import android.net.Uri;
@@ -14,14 +13,12 @@ import com.wo.rss.R;
  * @类说明 用于浏览详细内容 webview
  */
 
-@Deprecated
 public class WebViewActivity extends Activity {
-	@SuppressLint("SetJavaScriptEnabled")
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		// TODO Auto-generated method stub
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.web_view_activity);
+		setContentView(R.layout.web_activity);
 		Intent intent = getIntent();
 		String result = intent.getStringExtra("shttpURL");
 		Intent intentWeb = new Intent();

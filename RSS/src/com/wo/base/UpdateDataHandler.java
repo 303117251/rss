@@ -23,6 +23,7 @@ public class UpdateDataHandler extends Handler {
 		switch (msg.what) {
 		case 0:
 			adapter.addAll((ArrayList<Brief>)msg.obj);
+			adapter.notifyDataSetChanged();
 		}
 	}
 }
