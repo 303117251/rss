@@ -49,6 +49,7 @@ public class WaterfallActivity extends Activity implements
 		lazyScrollView = (LazyScrollView) findViewById(R.id.waterfall_scroll);
 		lazyScrollView.getView();
 		lazyScrollView.setOnScrollListener(this);
+		loadtext= (TextView)findViewById(R.id.loadtext);
 		waterfall_container = (LinearLayout) findViewById(R.id.waterfall_container);
 		item_width = getWindowManager().getDefaultDisplay().getWidth() / column;
 		linearLayouts = new ArrayList<LinearLayout>();
@@ -62,9 +63,8 @@ public class WaterfallActivity extends Activity implements
 					item_width, LayoutParams.WRAP_CONTENT);
 			layout.setOrientation(LinearLayout.VERTICAL);
 			layout.setLayoutParams(itemParam);
-			layout.setTag(i);
 			linearLayouts.add(layout);
-			waterfall_container.addView(layout, i);
+			waterfall_container.addView(layout);
 		}
 		waterfallMa.getWaterfallImgList(this, current_page);
 	}
@@ -80,10 +80,9 @@ public class WaterfallActivity extends Activity implements
 			ImageView imageView = new ImageView(this);
 			WaterfallImg img = imgList.get(i);
 			int height = img.getHeight();
-			utils.configDefaultBitmapMaxSize(item_width, (height * item_width)
-					/ item_width);
+			utils.configDefaultBitmapMaxSize(item_width, height);
 			LayoutParams layoutParams = new LayoutParams(
-					LayoutParams.WRAP_CONTENT, LayoutParams.FILL_PARENT);
+					LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT);
 			imageView.setLayoutParams(layoutParams);
 			int min = ws.getMin();
 			ws.addHeight(min, height);
@@ -95,12 +94,16 @@ public class WaterfallActivity extends Activity implements
 
 				}
 			});
+			if(i==(imgList.size()-1)) {
+				loadtext.setVisibility(View.GONE);
+			}
 
 		}
 	}
 
 	@Override
 	public void onBottom() {
+		loadtext.setVisibility(View.VISIBLE);
 		waterfallMa.getWaterfallImgList(this, ++current_page);
 	}
 
@@ -108,10 +111,8 @@ public class WaterfallActivity extends Activity implements
 	public void onTop() {
 
 	}
-
 	@Override
 	public void onScroll() {
 
 	}
-
 }

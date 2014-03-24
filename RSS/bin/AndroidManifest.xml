@@ -24,6 +24,8 @@
         </activity>
         <activity android:name="com.wo.activity.WaterfallActivity" >
         </activity>
+        <activity android:name="com.wo.activity.Gallery3DActivity" >
+        </activity>
         
         <activity android:name="com.wo.activity.TabViewActivity" >
             <intent-filter>

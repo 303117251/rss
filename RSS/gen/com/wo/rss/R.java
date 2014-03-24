@@ -22,26 +22,38 @@ public final class R {
     }
     public static final class drawable {
         public static final int ic_launcher=0x7f020000;
-        public static final int none_img=0x7f020001;
-        public static final int scrollbar=0x7f020002;
-        public static final int tabhost=0x7f020003;
+        public static final int img0001=0x7f020001;
+        public static final int img0030=0x7f020002;
+        public static final int img0100=0x7f020003;
+        public static final int img0130=0x7f020004;
+        public static final int img0200=0x7f020005;
+        public static final int img0230=0x7f020006;
+        public static final int img0300=0x7f020007;
+        public static final int img0330=0x7f020008;
+        public static final int img0354=0x7f020009;
+        public static final int none_img=0x7f02000a;
+        public static final int scrollbar=0x7f02000b;
+        public static final int tabhost=0x7f02000c;
+        public static final int waterfall_bg=0x7f02000d;
     }
     public static final class id {
-        public static final int action_settings=0x7f080006;
-        public static final int img=0x7f080001;
-        public static final int info=0x7f080002;
-        public static final int listView=0x7f080000;
-        public static final int loadtext=0x7f080005;
-        public static final int waterfall_container=0x7f080004;
-        public static final int waterfall_scroll=0x7f080003;
+        public static final int action_settings=0x7f080007;
+        public static final int gallery=0x7f080000;
+        public static final int img=0x7f080002;
+        public static final int info=0x7f080003;
+        public static final int listView=0x7f080001;
+        public static final int loadtext=0x7f080006;
+        public static final int waterfall_container=0x7f080005;
+        public static final int waterfall_scroll=0x7f080004;
     }
     public static final class layout {
-        public static final int list_activity=0x7f030000;
-        public static final int rss_list=0x7f030001;
-        public static final int tab_activity=0x7f030002;
-        public static final int waterfall_activity=0x7f030003;
-        public static final int waterfall_loading=0x7f030004;
-        public static final int web_activity=0x7f030005;
+        public static final int gallery_activity=0x7f030000;
+        public static final int list_activity=0x7f030001;
+        public static final int rss_list=0x7f030002;
+        public static final int tab_activity=0x7f030003;
+        public static final int waterfall_activity=0x7f030004;
+        public static final int waterfall_loading=0x7f030005;
+        public static final int web_activity=0x7f030006;
     }
     public static final class menu {
         public static final int main=0x7f070000;
