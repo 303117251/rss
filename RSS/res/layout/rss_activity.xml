@@ -5,8 +5,7 @@
     android:layout_height="fill_parent"
     >
     <ListView android:id="@+id/listView" android:layout_width="fill_parent" android:layout_height="fill_parent"
-        android:fadeScrollbars="false"
-        android:scrollbarFadeDuration="0"
+        android:scrollbars="none"
         android:scrollbarThumbVertical="@drawable/scrollbar"
          />
 </LinearLayout>

@@ -13,7 +13,6 @@ import android.widget.ListView;
 import android.widget.TextView;
 
 import com.wo.models.Brief;
-import com.wo.models.ViewCache;
 import com.wo.rss.R;
 import com.wo.service.AsynImgLoader;
 import com.wo.service.AsynImgLoader.ImageCallback;

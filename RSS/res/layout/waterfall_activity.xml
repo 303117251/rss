@@ -4,11 +4,13 @@
     android:layout_height="fill_parent"
     android:background="@drawable/waterfall_bg"
     android:orientation="vertical" >
-    <com.wo.base.LazyScrollView
+    <ScrollView
         android:id="@+id/waterfall_scroll"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:background="@drawable/waterfall_bg" >
+        android:scrollbars="none"
+        android:scrollbarThumbVertical="@drawable/scrollbar"
+         >
 
         <LinearLayout
             android:id="@+id/waterfall_container"
@@ -17,7 +19,7 @@
             android:orientation="horizontal"
             android:padding="2dp" >
         </LinearLayout>
-    </com.wo.base.LazyScrollView>
+    </ScrollView>
 
     <TextView
         android:id="@+id/loadtext"

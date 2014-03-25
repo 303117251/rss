@@ -24,16 +24,20 @@ public class TabViewActivity extends TabActivity {
 	        Intent intent1 = new Intent(this,RSSActivity.class);
 	        Intent intent2 = new Intent(this,WaterfallActivity.class);
 	        Intent intent3 = new Intent(this,Gallery3DActivity.class);
+	        Intent intent4 = new Intent(this,DownloadActivity.class);
 	        TabHost tabHost = getTabHost();
 	        tabHost.addTab(tabHost.newTabSpec("tab1")
 	                .setIndicator("RSS",getResources().getDrawable(android.R.drawable.ic_menu_camera))
 	                .setContent(intent1));
 	        tabHost.addTab(tabHost.newTabSpec("tab2")
-	                .setIndicator("Waterfall",getResources().getDrawable(android.R.drawable.ic_menu_camera))
+	                .setIndicator("瀑布",getResources().getDrawable(android.R.drawable.ic_menu_camera))
 	                .setContent(intent2));
 	        tabHost.addTab(tabHost.newTabSpec("tab3")
-	                .setIndicator("Coverflow",getResources().getDrawable(android.R.drawable.ic_menu_camera))
+	                .setIndicator("封面",getResources().getDrawable(android.R.drawable.ic_menu_camera))
 	                .setContent(intent3));
+	        tabHost.addTab(tabHost.newTabSpec("tab4")
+	                .setIndicator("下载",getResources().getDrawable(android.R.drawable.ic_menu_camera))
+	                .setContent(intent4));
 
 	    }
 }

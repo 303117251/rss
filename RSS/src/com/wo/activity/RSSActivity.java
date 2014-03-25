@@ -36,7 +36,7 @@ public class RSSActivity extends Activity  {
 
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
-		setContentView(R.layout.list_activity);
+		setContentView(R.layout.rss_activity);
 		list = (ListView) findViewById(R.id.listView);
 		super.onCreate(savedInstanceState);
 		init();

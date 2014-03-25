@@ -6,18 +6,18 @@ import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
-import android.os.Message;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.ViewGroup.LayoutParams;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ProgressBar;
-import android.widget.RelativeLayout;
+import android.widget.ScrollView;
 import android.widget.TextView;
 
 import com.lidroid.xutils.BitmapUtils;
-import com.wo.base.LazyScrollView;
+import com.wo.base.LazyScrollListernerBound;
+import com.wo.base.LazyScrollListernerBound.OnScrollListener;
 import com.wo.data.manager.WaterfallActivityManager;
 import com.wo.models.WaterfallImg;
 import com.wo.rss.R;
@@ -29,8 +29,8 @@ import com.wo.service.WaterfallService;
  * @类说明 加载瀑布流图片的acitivity
  */
 public class WaterfallActivity extends Activity implements
-		LazyScrollView.OnScrollListener {
-	private LazyScrollView lazyScrollView;
+		OnScrollListener {
+	private ScrollView scrollView;
 	private LinearLayout waterfall_container;
 	private ArrayList<LinearLayout> linearLayouts;// 列布局
 	private LinearLayout progressbar;// 进度条
@@ -53,9 +53,8 @@ public class WaterfallActivity extends Activity implements
 	}
 
 	public void initView() {
-		lazyScrollView = (LazyScrollView) findViewById(R.id.waterfall_scroll);
-		lazyScrollView.getView();
-		lazyScrollView.setOnScrollListener(this);
+		scrollView = (ScrollView) findViewById(R.id.waterfall_scroll);
+		LazyScrollListernerBound lazy = new LazyScrollListernerBound(this,scrollView);
 		pb = (ProgressBar)findViewById(R.id.progress_bar);
 		pb.setIndeterminate(false);
 		pb.setMax(23);
