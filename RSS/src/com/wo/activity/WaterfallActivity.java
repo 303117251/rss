@@ -3,12 +3,17 @@ package com.wo.activity;
 import java.util.ArrayList;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Message;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.ViewGroup.LayoutParams;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.ProgressBar;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.lidroid.xutils.BitmapUtils;
@@ -37,6 +42,8 @@ public class WaterfallActivity extends Activity implements
 	private WaterfallActivityManager waterfallMa;
 	private BitmapUtils utils;
 	private WaterfallService ws;
+	private ProgressBar pb;
+	private Handler pbHandler;
 
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
@@ -49,6 +56,9 @@ public class WaterfallActivity extends Activity implements
 		lazyScrollView = (LazyScrollView) findViewById(R.id.waterfall_scroll);
 		lazyScrollView.getView();
 		lazyScrollView.setOnScrollListener(this);
+		pb = (ProgressBar)findViewById(R.id.progress_bar);
+		pb.setIndeterminate(false);
+		pb.setMax(23);
 		loadtext= (TextView)findViewById(R.id.loadtext);
 		waterfall_container = (LinearLayout) findViewById(R.id.waterfall_container);
 		item_width = getWindowManager().getDefaultDisplay().getWidth() / column;
@@ -87,13 +97,24 @@ public class WaterfallActivity extends Activity implements
 			int min = ws.getMin();
 			ws.addHeight(min, height);
 			linearLayouts.get(min).addView(imageView);
+			final String imgURL = img.getUrl();
 			utils.display(imageView, img.getUrl());
 			imageView.setOnClickListener(new OnClickListener() {
 				@Override
 				public void onClick(View v) {
-
+					Intent intent= new Intent();
+					intent.putExtra("imgURL", imgURL);
+	                intent.setClass(WaterfallActivity.this, ImgDisplayActivity.class);
+	                WaterfallActivity.this.startActivity(intent);
 				}
 			});
+			final Integer n = i;
+			//更新progressbar
+			if(i<23) {
+				pb.setProgress(i);
+			}else if(i==23) {
+				pb.setVisibility(View.GONE);	
+			}
 			if(i==(imgList.size()-1)) {
 				loadtext.setVisibility(View.GONE);
 			}

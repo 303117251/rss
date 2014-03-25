@@ -10,8 +10,6 @@ import com.wo.rss.R;
 public class Gallery3DActivity extends Activity {
 	public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        
-        
         setContentView(R.layout.gallery_activity);
         
         Integer[] images = { R.drawable.img0001, R.drawable.img0030,
