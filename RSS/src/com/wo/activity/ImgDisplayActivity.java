@@ -5,8 +5,8 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.view.View.OnClickListener;
-import android.widget.ImageButton;
 import android.widget.ImageView;
+import android.widget.ScrollView;
 
 import com.lidroid.xutils.BitmapUtils;
 import com.wo.rss.R;
@@ -27,13 +27,12 @@ public class ImgDisplayActivity extends Activity{
 		BitmapUtils utils = new BitmapUtils(this);
 		utils.display(imgView, result);
 		
-		ImageButton imgBtn = (ImageButton)findViewById(R.id.img_activity_btn);
-		imgBtn.setOnClickListener(new OnClickListener() {
+		imgView.setOnClickListener(new OnClickListener() {
 			@Override
 			public void onClick(View v) {
 				finish();
 			}
-		});
+		} );
 
 	}
 }

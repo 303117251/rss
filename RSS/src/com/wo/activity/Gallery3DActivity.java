@@ -2,6 +2,7 @@ package com.wo.activity;
 
 import android.app.Activity;
 import android.os.Bundle;
+import android.util.Log;
 
 import com.wo.base.CustomGallery;
 import com.wo.base.ImageAdapter;
@@ -11,7 +12,7 @@ public class Gallery3DActivity extends Activity {
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.gallery_activity);
-
+		Log.d("test", "outoutoyt");
 		Integer[] images = { R.drawable.img0001, R.drawable.img0030,
 				R.drawable.img0100, R.drawable.img0130, R.drawable.img0200,
 				R.drawable.img0230, R.drawable.img0300, R.drawable.img0330,

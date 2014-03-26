@@ -93,6 +93,7 @@ public class WaterfallActivity extends Activity implements
 			LayoutParams layoutParams = new LayoutParams(
 					LayoutParams.WRAP_CONTENT, LayoutParams.WRAP_CONTENT);
 			imageView.setLayoutParams(layoutParams);
+			imageView.setScaleType(ImageView.ScaleType.FIT_XY);
 			int min = ws.getMin();
 			ws.addHeight(min, height);
 			linearLayouts.get(min).addView(imageView);

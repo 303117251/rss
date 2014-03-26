@@ -75,7 +75,7 @@ public class ImageAdapter extends BaseAdapter {
 			ImageView imageView = new ImageView(mContext);
 			imageView.setImageBitmap(bitmapWithReflection);
 			imageView.setLayoutParams(new CustomGallery.LayoutParams(180, 240));
-//			imageView.setScaleType(ScaleType.MATRIX);
+			imageView.setScaleType(ScaleType.FIT_XY);
 			mImages[index++] = imageView;
 		}
 		return true;

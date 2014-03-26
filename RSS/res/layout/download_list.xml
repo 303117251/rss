@@ -8,10 +8,11 @@
     <ImageView
         android:id="@+id/download_limg"
         android:layout_width="fill_parent"
-        android:layout_height="80dp"
+        android:layout_height="100dp"
         android:layout_alignParentLeft="true"
         android:layout_margin="5px"
-        android:visibility="gone" />
+        android:visibility="gone" 
+        android:scaleType="fitXY"/>
 
     <RelativeLayout
         android:layout_width="fill_parent"
@@ -28,7 +29,8 @@
             android:layout_centerVertical="true"
             android:layout_margin="5dp"
             android:layout_marginRight="10dp"
-            android:background="@drawable/s_icon" />
+            android:background="@drawable/s_icon"
+            android:scaleType="fitXY" />
 
         <RelativeLayout
             android:layout_width="fill_parent"
